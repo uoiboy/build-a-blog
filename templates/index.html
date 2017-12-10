@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+  
+                        
+    <hr>
+
+    <form method ='POST'>
+        <ul>
+            {% for blog  in blogs %}
+            <li> <a href="http:localhost:5000/index/?blog_id=" />{{blog.post_title}},{{blog.body}} <!---how does this display on page?-->
+            </li>
+           
+            {% endfor %}
+        </ul>
+
+    
+
+    <hr />
+
+  
+    </ul>
+</form>  
+{%endblock%}

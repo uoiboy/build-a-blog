@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<hr/>
+<body>
+    <form method = 'post'  action "/newpost"/>
+<p> <label for ='post_title'>  Post Title  
+         <input id= 'post_title' type ='text'  name ='post_title'/> 
+    </label>                                                               </p>
+
+<p>
+    <label for ='body' > New Post 
+        <input id = 'body' type ='textarea' name = 'body'/>
+    </label>
+</p>    
+
+<p>  <input type="submit" value="Add Post" /></p>
+
+</form>
+</body>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+</body>
