@@ -1,17 +1,26 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+
+<style>
+    .message{
+        color: red;
+    }
+</style>
+
+</head>
 
 <hr/>
 <body>
-    <form method = 'post'  action "/newpost"/>
+    <form method = 'post'  action = "/newpost"/>
 <p> <label for ='post_title'>  Post Title  
-         <input id= 'post_title' type ='text'  name ='post_title'/> 
+         <input id= 'post_title' type ='text'  name ='post_title'/> <!--   <span class ="error">{{error}}</span> -->
     </label>                                                               </p>
 
 <p>
     <label for ='body' > New Post 
-        <input id = 'body' type ='textarea' name = 'body'/>
+        <input id = 'body' type ='textarea' name = 'body'/><!--<span class ="error">{{error}}</span>-->
     </label>
 </p>    
 

@@ -4,12 +4,24 @@
         
      <head>
         <title>{{title}}</title>
+        <style>
+            .error{
+                color: red;
+            }
+        </style>
+        
      </head>
     <body>
 
-        
-        <a href="http://localhost:5000/index.html">Main Blog Page</a><a href ="http://localhost:5000/newpost.html">Add a Post</a>
-        
+        <div>
+        <a href="/index">Main Blog Page</a><a href ="/newpost">Add a Post</a>
+        </div>
+        {% with messages = get_flashed_messages (with_categories = True ) %}
+        <ul>
+            {% for category, message  in messages %}
+                <li>{{message}}</li>
+
+        </ul>
 
     </body>
     </html>

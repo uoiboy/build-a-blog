@@ -7,7 +7,7 @@
     <form method ='POST'>
         <ul>
             {% for blog  in blogs %}
-            <li> <a href="http:localhost:5000/index/?blog_id=" />{{blog.post_title}},{{blog.body}} <!---how does this display on page?-->
+            <li> <a href="/display/?blog_id={{blog_id}}" />{{blog.post_title}},{{blog.body}} <!---how does this display on page?-->
             </li>
            
             {% endfor %}

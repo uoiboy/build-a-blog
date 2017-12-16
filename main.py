@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template, flash
+from flask import Flask, request, redirect, render_template,session, flash
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -25,7 +25,8 @@ class Blog(db.Model):
 
 @app.route("/", methods =['GET','POST'])
 def display_main_page ():
-    return render_template("index.html")    
+    blogs = Blog.query_all()
+    return render_template("index.html", blogs=blogs)    
 
 
 
@@ -39,8 +40,8 @@ def add_entry():
         post_title = request.form['post_title']
         body= request.form['body']
         if "" in post_title or "" in body:
-            return render_template("index.html")
-            flash("Please enter your title or your post")
+            return render_template("index.html", message = message)
+            flash("Please enter your title or your post") # review flash message
         elif request.method == 'POST': 
             new_blog = Blog(post_title, body)
             db.session.add(new_blog)
